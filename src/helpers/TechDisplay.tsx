@@ -8,6 +8,11 @@ const TechDisplay = ({item}:{item:IIcon}) => {
     <div>
         <p>Proficiency level:</p>
         {item.name}
+        <div className="progress">
+          <div className="progress-bar">
+
+          </div>
+        </div>
         </div>
   )
 }

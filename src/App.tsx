@@ -102,8 +102,9 @@ function App() {
 							ecosystem such as Qwik, Svelte and Astro. My backend experience is
 							limited to Node.Js and a little bit of .NET & C#
 						</p>
-						<p>See a full list of what tech i use below </p>
+			
 						<div className="icon-display-container">
+							<h4>Skills</h4>
 							<div className="icon-container">
 								{skills.map((item) => (
 									<article
