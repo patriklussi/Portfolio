@@ -305,30 +305,45 @@ a {
     gap: var(--lg);
 }
 
+.icon-display-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .skills-content-container p {
     color: var(--neutraL);
-
 }
 
 .icon-container {
-    padding: var(--md) 0px;
+
     display: grid;
     grid-template-columns: repeat(6, max-content);
-    gap: var(--sm);
 
 }
 
-.fake-icon {
-    border-radius: 5px;
-    height: 65px;
-    width: 65px;
-    border: 2px solid var(--border);
+.icon-box {
+    display: grid;
+    place-items: center;
     cursor: pointer;
-    transition: all .3s linear;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    padding: var(--md);
+    gap: var(--sm);
 }
 
-.fake-icon:hover {
-    transform: scale(1.05);
+
+.icon-box:hover {
+    background-color: var(--border);
+
+}
+
+.icon-box p {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.selected-tech-display {
+    padding: var(--sm);
+
 }
 
 /* Footer */

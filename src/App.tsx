@@ -1,10 +1,18 @@
-import { useRef } from "react";
+import { useRef,useState } from "react";
 //Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
+//Helpers
+import { skills } from "./helpers/icons";
+import TechDisplay from "./helpers/TechDisplay";
+
+//Types
+import { IIcon } from "./helpers/types";
+
 function App() {
 	const aboutRef = useRef<HTMLElement>(null);
-
+	const [selectedSkill,setSelectedSkill] = useState<IIcon>()
 	const scrollToAbout = () => {
 		aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 	};
@@ -45,13 +53,6 @@ function App() {
 					<div className="content-container">
 						<div className="para-container">
 							<h2 className="category-h2">About me</h2>
-							{/* <p>
-								My name is Patrik and i enjoy creating things for the web that
-								people can experience. My main passion is creating frontend web
-								applications which both look good and work well. I Have
-								knowledge in responsive design and one of my priorities is
-								making everything i do as accessible as possible.
-							</p> */}
 							<p>
 								As a junior frontend developer, I thrive on building dynamic and
 								engaging user interfaces using React, HTML, CSS, Svelte, and
@@ -81,7 +82,9 @@ function App() {
 						</div>
 
 						<div className="img-container">
-							<article className="fake-image"></article>
+							<article className="fake-image">
+								
+							</article>
 						</div>
 					</div>
 				</section>
@@ -100,20 +103,27 @@ function App() {
 							limited to Node.Js and a little bit of .NET & C#
 						</p>
 						<p>See a full list of what tech i use below </p>
-						<div className="icon-container">
-							<article className="fake-icon"></article>
-							<article className="fake-icon"></article>
-							<article className="fake-icon"></article>
-							<article className="fake-icon"></article>
-							<article className="fake-icon"></article>
-							<article className="fake-icon"></article>
-							<article className="fake-icon"></article>
-							<article className="fake-icon"></article>
-							<article className="fake-icon"></article>
-							<article className="fake-icon"></article>
+						<div className="icon-display-container">
+							<div className="icon-container">
+								{skills.map((item) => (
+									<article
+										onKeyDown={(e) => {
+											if (e.key === "Enter") setSelectedSkill(item);
+										}}
+										onClick={() => setSelectedSkill(item)}
+										className="icon-box"
+										key={item.id}
+									>
+										<img width={50} src={item.src} alt={item.alt} />
+										<p>{item.name}</p>
+									</article>
+								))}
+							</div>
+							<div className="selected-tech-display">
+								{selectedSkill && (<TechDisplay item={selectedSkill} />)}
+							</div>
 						</div>
 					</div>
-					<div className="selected-tech-display"></div>
 				</section>
 
 				<section className="section projects">projects</section>
