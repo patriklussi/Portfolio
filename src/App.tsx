@@ -1,18 +1,15 @@
-import { useRef,useState } from "react";
+import { useRef, useState } from "react";
 //Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
 //Helpers
 import { skills } from "./helpers/icons";
-import TechDisplay from "./helpers/TechDisplay";
-
 //Types
 import { IIcon } from "./helpers/types";
 
 function App() {
 	const aboutRef = useRef<HTMLElement>(null);
-	const [selectedSkill,setSelectedSkill] = useState<IIcon>()
+	const [selectedSkill, setSelectedSkill] = useState<IIcon>();
 	const scrollToAbout = () => {
 		aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 	};
@@ -82,9 +79,7 @@ function App() {
 						</div>
 
 						<div className="img-container">
-							<article className="fake-image">
-								
-							</article>
+							<article className="fake-image"></article>
 						</div>
 					</div>
 				</section>
@@ -102,9 +97,8 @@ function App() {
 							ecosystem such as Qwik, Svelte and Astro. My backend experience is
 							limited to Node.Js and a little bit of .NET & C#
 						</p>
-			
+						<h4 className="skills-h4">Skills</h4>
 						<div className="icon-display-container">
-							<h4>Skills</h4>
 							<div className="icon-container">
 								{skills.map((item) => (
 									<article
@@ -120,9 +114,40 @@ function App() {
 									</article>
 								))}
 							</div>
-							<div className="selected-tech-display">
-								{selectedSkill && (<TechDisplay item={selectedSkill} />)}
-							</div>
+
+							{/* <div className="selected-tech-display">
+								{selectedSkill && <TechDisplay item={selectedSkill} />}
+							</div> */}
+						</div>
+						<h4 className="skills-h4">Experience</h4>				
+						<div className="experience-box">
+				
+							<article className="experience-card">
+								<h2>Frontend developer</h2>
+								<section>
+									Swedcon18 <span className="intern">Intern</span>
+									<time>2023-2023</time>
+								</section>
+								<p>
+									Worked at Swedcon18 as an intern on the Carelyo application.
+									Worked with creating new features and components, styling the
+									webpage and handling backend connectivity etc.
+								</p>
+							</article>
+							<article className="experience-card">
+								<h2>Frontend developer</h2>
+								<section>
+									Sensera AB <span className="intern">Intern</span>
+									<time>2022-2022</time>
+								</section>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+									voluptatibus accusamus, explicabo qui tempore laborum
+									blanditiis nemo repudiandae, doloribus fugit temporibus
+									perferendis distinctio nihil?
+								</p>
+							</article>
+							
 						</div>
 					</div>
 				</section>

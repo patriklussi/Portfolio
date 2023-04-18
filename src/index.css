@@ -10,7 +10,7 @@
     --background: #000000;
     --border: #8758ff;
     --neutraL: #f2f2f2;
-
+    --muted: #6c46cc;
     /* Paddings */
     --sm: 8px;
     --md: 16px;
@@ -61,14 +61,12 @@ a {
     z-index: 11;
     top: 0px;
     align-items: center;
-
 }
 
 .menu {
     position: relative;
     display: none;
     cursor: pointer;
-
 }
 
 .menu::after {
@@ -89,7 +87,6 @@ a {
 
 .header-title:hover {
     color: var(--border);
-
 }
 
 .header-nav {
@@ -155,6 +152,22 @@ a {
     margin-top: var(--sm);
 }
 
+.name-title {
+    animation: slideIn 1s linear;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
 .landing-text-box p {
     max-width: 540px;
     line-height: 28px;
@@ -172,7 +185,7 @@ a {
 
 .btn {
     font-family: inherit;
-    padding: var(--md) 50px;
+    padding: 12px 50px;
     border-radius: 36px;
     cursor: pointer;
     background-color: transparent;
@@ -191,7 +204,6 @@ a {
     background-color: var(--neutraL);
 }
 
-
 /* About section */
 .about-me {
     display: flex;
@@ -207,10 +219,6 @@ a {
     justify-content: space-between;
 }
 
-
-
-
-
 .skills-preview {
     overflow: visible;
     height: fit-content;
@@ -218,7 +226,6 @@ a {
     width: 100%;
     display: flex;
     gap: var(--sm);
-
 }
 
 .tag {
@@ -226,7 +233,6 @@ a {
     font-size: 14px;
     padding: 4px 8px;
     border: 2px solid;
-
 }
 
 .fake-image {
@@ -250,7 +256,6 @@ a {
     position: absolute;
     border: 2px solid var(--border);
     background-color: transparent;
-
     border-radius: 5px;
     z-index: -1;
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -264,7 +269,6 @@ a {
     position: absolute;
     border: 2px solid var(--border);
     background-color: transparent;
-
     border-radius: 5px;
     transform: rotate(35deg);
     z-index: -1;
@@ -278,7 +282,6 @@ a {
 .fake-image:hover::before {
     transform: rotate(0);
 }
-
 
 .para-container {
     max-width: 500px;
@@ -305,6 +308,10 @@ a {
     gap: var(--lg);
 }
 
+.skills-h4 {
+    font-size: var(--lg);
+}
+
 .icon-display-container {
     display: flex;
     flex-wrap: wrap;
@@ -315,35 +322,71 @@ a {
 }
 
 .icon-container {
-
     display: grid;
-    grid-template-columns: repeat(6, max-content);
-
+    grid-auto-columns: max-content;
+    grid-template-rows: auto;
+    width: 100%;
 }
 
 .icon-box {
-    display: grid;
-    place-items: center;
+
     cursor: pointer;
     transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
     padding: var(--md);
-    gap: var(--sm);
+    text-align: center;
 }
-
 
 .icon-box:hover {
     background-color: var(--border);
-
 }
 
 .icon-box p {
     font-size: 10px;
     font-weight: bold;
+    margin-top: var(--sm);
+}
+
+.experience-box {
+
+    width: 100%;
+    padding: var(--sm);
+    display: flex;
+    gap: var(--lg);
+    flex-wrap: wrap;
+}
+
+.experience-card {
+    background-color: var(--muted);
+    padding: var(--md);
+    color: var(--neutraL);
+    display: grid;
+    gap: var(--sm);
+    flex: 1;
+
+}
+
+.intern {
+    color: #E0E0E0;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.experience-card section time {
+    display: block;
+    margin-top: var(--sm);
+
+
 }
 
 .selected-tech-display {
-    padding: var(--sm);
+    padding: var(--sm) var(--md);
+    flex: 1;
+}
 
+.flex-item-center-sm {
+    display: flex;
+    align-items: center;
+    gap: var(--sm);
 }
 
 /* Footer */
@@ -353,23 +396,30 @@ a {
     padding: var(--lg);
     display: flex;
     justify-content: center;
-
     gap: var(--sm);
 }
 
 /* Progress bar */
-.progress {
-    width: 100%;
-    padding: var(--sm);
-    background-color: var(--border);
-    animation: slide 5s smooth;
+.Proficiency-box {
+    display: grid;
+    gap: 16px;
 }
 
-.progress-bar {
-    background-color: var(--neutraL);
-    height: 25px;
-    transition: all 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+.progress {
+    width: 100%;
+    height: 2px;
+    margin: var(--sm) 0px;
+    border-radius: 5px;
+    background-color: #373737;
+    z-index: -1;
+}
 
+.bar {
+    display: block;
+    height: 100%;
+    width: 10%;
+    background: #FEE528;
+    animation: slide 2.5s ease-in-out forwards;
 }
 
 @keyframes slide {
@@ -384,7 +434,6 @@ a {
 
 /* Media querys */
 @media screen and (max-width:1024px) {
-
     .hero {
         padding: 0px 100px;
     }
@@ -397,7 +446,6 @@ a {
         display: none;
     }
 }
-
 
 @media screen and (max-width:625px) {
     .menu {
@@ -415,12 +463,9 @@ a {
     .fake-image {
         display: none;
     }
-
 }
 
-
 @media screen and (max-width:425px) {
-
     .hero {
         padding: 0px 25px;
     }
@@ -432,5 +477,4 @@ a {
     .fake-image {
         display: none;
     }
-
 }
