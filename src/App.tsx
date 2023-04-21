@@ -99,7 +99,8 @@ function App() {
 						</p>
 						<h4 className="skills-h4">Skills</h4>
 						<div className="icon-display-container">
-							<div className="icon-container">
+							<p className="skills-container-title">Frontend</p>
+							<div className="icon-grid-container">
 								{skills.map((item) => (
 									<article
 										onKeyDown={(e) => {
@@ -119,35 +120,47 @@ function App() {
 								{selectedSkill && <TechDisplay item={selectedSkill} />}
 							</div> */}
 						</div>
-						<h4 className="skills-h4">Experience</h4>				
+						<h4 className="skills-h4">Experience</h4>
 						<div className="experience-box">
-				
 							<article className="experience-card">
-								<h2>Frontend developer</h2>
-								<section>
-									Swedcon18 <span className="intern">Intern</span>
-									<time>2023-2023</time>
-								</section>
-								<p>
-									Worked at Swedcon18 as an intern on the Carelyo application.
-									Worked with creating new features and components, styling the
-									webpage and handling backend connectivity etc.
-								</p>
+								<div className="left"></div>
+								<div className="right">
+									<h3>Frontend Developer</h3>
+
+									<p className="description">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Ratione eos rem voluptatem deleniti iste, quasi nihil
+										nesciunt accusantium.
+									</p>
+									<section className="tags"></section>
+								</div>
 							</article>
 							<article className="experience-card">
-								<h2>Frontend developer</h2>
-								<section>
-									Sensera AB <span className="intern">Intern</span>
-									<time>2022-2022</time>
-								</section>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-									voluptatibus accusamus, explicabo qui tempore laborum
-									blanditiis nemo repudiandae, doloribus fugit temporibus
-									perferendis distinctio nihil?
-								</p>
+								<div className="left"></div>
+								<div className="right">
+									<h3>Frontend Developer</h3>
+
+									<p className="description">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Ratione eos rem voluptatem deleniti iste, quasi nihil
+										nesciunt accusantium.
+									</p>
+									<section className="tags"></section>
+								</div>
 							</article>
-							
+							<article className="experience-card">
+								<div className="left"></div>
+								<div className="right">
+									<h3>Frontend Developer</h3>
+
+									<p className="description">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Ratione eos rem voluptatem deleniti iste, quasi nihil
+										nesciunt accusantium.
+									</p>
+									<section className="tags"></section>
+								</div>
+							</article>
 						</div>
 					</div>
 				</section>
