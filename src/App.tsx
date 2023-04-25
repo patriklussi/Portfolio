@@ -6,7 +6,8 @@ import Footer from "./components/Footer";
 import { skills } from "./helpers/icons";
 //Types
 import { IIcon } from "./helpers/types";
-
+//Library imports
+import { ArrowRight } from "react-feather";
 function App() {
 	const aboutRef = useRef<HTMLElement>(null);
 	const [selectedSkill, setSelectedSkill] = useState<IIcon>();
@@ -65,17 +66,6 @@ function App() {
 								sweden and I have since studied frontend development and I am
 								now looking to start working.
 							</p>
-
-							{/* <div className="skills-preview">
-								<p>Some of my favorite technologies to work with: </p>
-								<div>
-									<Tag color="#61DBFB">React</Tag>
-									<Tag color="#f7df1e">JavaScript</Tag>
-									<Tag color="#228EC7">CSS</Tag>
-									<Tag color="#E54C21">HTML</Tag>
-									<Tag color="#41B883">Vue</Tag>
-								</div>
-							</div> */}
 						</div>
 
 						<div className="img-container">
@@ -115,50 +105,66 @@ function App() {
 									</article>
 								))}
 							</div>
-
-							{/* <div className="selected-tech-display">
-								{selectedSkill && <TechDisplay item={selectedSkill} />}
-							</div> */}
 						</div>
 						<h4 className="skills-h4">Experience</h4>
 						<div className="experience-box">
 							<article className="experience-card">
-								<div className="left"></div>
+								<div className="left">
+									{" "}
+									<img
+										src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+										alt="nothing currently"
+									/>
+								</div>
 								<div className="right">
 									<h3>Frontend Developer</h3>
 
+									<section className="tags">
+										Swedcon 18 <time>2023 - Current</time>
+									</section>
 									<p className="description">
 										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Ratione eos rem voluptatem deleniti iste, quasi nihil
-										nesciunt accusantium.
 									</p>
-									<section className="tags"></section>
+									<a className="a-link-btn " href="#">Swedcon 18 <ArrowRight/></a>
 								</div>
 							</article>
 							<article className="experience-card">
-								<div className="left"></div>
+								<div className="left">
+									{" "}
+									<img
+										src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+										alt="nothing currently"
+									/>
+								</div>
 								<div className="right">
 									<h3>Frontend Developer</h3>
 
+									<section className="tags">
+										Sensera AB <time>2022 - 2022</time>
+									</section>
 									<p className="description">
 										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Ratione eos rem voluptatem deleniti iste, quasi nihil
-										nesciunt accusantium.
 									</p>
-									<section className="tags"></section>
+									<a className="a-link-btn " href="#">Swedcon 18 <ArrowRight/></a>
 								</div>
 							</article>
 							<article className="experience-card">
-								<div className="left"></div>
+								<div className="left">
+									<img
+										src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+										alt="nothing currently"
+									/>
+								</div>
 								<div className="right">
 									<h3>Frontend Developer</h3>
 
+									<section className="tags">
+										ViaEcole <time>2021 - 2022</time>
+									</section>
 									<p className="description">
 										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Ratione eos rem voluptatem deleniti iste, quasi nihil
-										nesciunt accusantium.
 									</p>
-									<section className="tags"></section>
+									<a className="a-link-btn " href="#">Swedcon 18 <ArrowRight/></a>
 								</div>
 							</article>
 						</div>
