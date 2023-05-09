@@ -7,7 +7,6 @@ import { skills } from "./helpers/icons";
 //Types
 import { IIcon } from "./helpers/types";
 //Library imports
-import { ArrowRight } from "react-feather";
 function App() {
 	const aboutRef = useRef<HTMLElement>(null);
 	const [selectedSkill, setSelectedSkill] = useState<IIcon>();
@@ -75,7 +74,7 @@ function App() {
 				</section>
 				<section className="section skills">
 					<div className="skills-content-container">
-						<h2 className="category-h2">Experience & skills</h2>
+						<h2 className="category-h2">Skills</h2>
 						<p>
 							My skills and passion reside mostly on the frontend as i enjoy
 							creating good looking applications people can interact with. The
@@ -106,71 +105,78 @@ function App() {
 								))}
 							</div>
 						</div>
-						<h4 className="skills-h4">Experience</h4>
-						<div className="experience-box">
-							<article className="experience-card">
-								<div className="left">
-									{" "}
-									<img
-										src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
-										alt="nothing currently"
-									/>
-								</div>
-								<div className="right">
-									<h3>Frontend Developer</h3>
-
-									<section className="tags">
-										Swedcon 18 <time>2023 - Current</time>
-									</section>
-									<p className="description">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									</p>
-									<a className="a-link-btn " href="#">Swedcon 18 <ArrowRight/></a>
-								</div>
-							</article>
-							<article className="experience-card">
-								<div className="left">
-									{" "}
-									<img
-										src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
-										alt="nothing currently"
-									/>
-								</div>
-								<div className="right">
-									<h3>Frontend Developer</h3>
-
-									<section className="tags">
-										Sensera AB <time>2022 - 2022</time>
-									</section>
-									<p className="description">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									</p>
-									<a className="a-link-btn " href="#">Swedcon 18 <ArrowRight/></a>
-								</div>
-							</article>
-							<article className="experience-card">
-								<div className="left">
-									<img
-										src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
-										alt="nothing currently"
-									/>
-								</div>
-								<div className="right">
-									<h3>Frontend Developer</h3>
-
-									<section className="tags">
-										ViaEcole <time>2021 - 2022</time>
-									</section>
-									<p className="description">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									</p>
-									<a className="a-link-btn " href="#">Swedcon 18 <ArrowRight/></a>
-								</div>
-							</article>
-						</div>
 					</div>
 				</section>
+				<section className="section experience">
+					<h2 className="category-h2">Experience</h2>
+					<div className="experience-box">
+						<article className="experience-card">
+							<div className="left">
+								{" "}
+								<img
+									className="card-img"
+									src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+									alt="nothing currently"
+								/>
+							</div>
+							<div className="right">
+								<h3>Frontend Developer</h3>
 
+								<section className="tags">
+									Swedcon 18 <time>2023 - Current</time>
+								</section>
+								<p className="description">
+									Worked on the Carelyo healthcare platform as a frontend
+									developer. Mainly worked with building new components,
+									handling queries from the backend and design work.
+								</p>
+							</div>
+						</article>
+						<article className="experience-card">
+							<div className="left">
+								{" "}
+								<img
+									className="card-img"
+									src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+									alt="nothing currently"
+								/>
+							</div>
+							<div className="right">
+								<h3>Frontend Developer</h3>
+
+								<section className="tags">
+									Sensera AB <time>2022 - 2022</time>
+								</section>
+								<p className="description">
+									Worked with Sensera ABs learning management systems as a
+									frontend developer. Mainly worked with handling data from the
+									backend and converting figma wireframes.
+								</p>
+							</div>
+						</article>
+						<article className="experience-card">
+							<div className="left">
+								<img
+									className="card-img"
+									src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+									alt="nothing currently"
+								/>
+							</div>
+							<div className="right">
+								<h3>Frontend Developer</h3>
+
+								<section className="tags">
+									ViaEcole <time>2021 - 2022</time>
+								</section>
+								<p className="description">
+									Worked at ViaEcole as a frontend developer on an internal
+									project. Mainly worked with creating a web based screen share
+									application.
+								</p>
+							</div>
+						</article>
+					</div>
+				</section>
 				<section className="section projects">projects</section>
 				<section className="section contact">contact</section>
 			</main>
