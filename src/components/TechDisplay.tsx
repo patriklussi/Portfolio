@@ -1,8 +1,8 @@
 //Types
-import { IIcon } from "./types";
+import { IIcon } from "../helpers/types";
 
 //Helpers
-import { generateColor } from "./helpers";
+import { generateColor } from "../helpers/helpers";
 const TechDisplay = ({ item }: { item: IIcon }) => {
   generateColor();
 	console.log(item);
