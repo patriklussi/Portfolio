@@ -391,14 +391,14 @@ a {
     background-color: var(--muted);
     display: flex;
     gap: var(--md);
+    padding: 0 var(--lg);
+    margin: var(--md) 0px;
 
-    padding: 0 var(--sm);
-    width: fit-content;
-    margin: 2px auto;
 }
 
 .tab-item {
-    padding: 10px;
+    list-style: none;
+    padding: 14px;
     border-bottom: 3px solid transparent;
     color: var(--neutraL);
     cursor: pointer;

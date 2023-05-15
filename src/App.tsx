@@ -114,11 +114,11 @@ function App() {
           <div className="experience-box">
  
                     {/* Implement horizontal tabs */}
-                    <div className="tabs">
+                    <ul className="tabs">
                         {tabs.map((item) => (
-                          <p className={`tab-item  ${item === "Swedcon18" ? "active-tab" : ""}`}>{item}</p>
+                          <li className={`tab-item  ${item === "Swedcon18" ? "active-tab" : ""}`}>{item}</li>
                         ))}
-                    </div>
+                    </ul>
             {/* <article className="experience-card">
               {" "}
               <img
