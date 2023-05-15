@@ -14,6 +14,8 @@ function App() {
     aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+
+  const tabs = ["Swedcon18", "Sensera AB", "Learnpoint"];
   return (
     <div className="App animate__animated animate__fadeIn  animate__delay-1s ">
       <Header scrollToAbout={scrollToAbout} />
@@ -86,7 +88,7 @@ function App() {
               ecosystem such as Qwik, Svelte and Astro. My backend experience is
               limited to Node.Js and a little bit of .NET & C#
             </p>
-            <h4 className="skills-h4">Skills</h4>
+
             <div className="icon-display-container">
               <p className="skills-container-title">Frontend</p>
               <div className="icon-grid-container">
@@ -110,7 +112,14 @@ function App() {
         <section className="section experience">
           <h2 className="category-h2">Experience</h2>
           <div className="experience-box">
-            <article className="experience-card">
+ 
+                    {/* Implement horizontal tabs */}
+                    <div className="tabs">
+                        {tabs.map((item) => (
+                          <p className={`tab-item  ${item === "Swedcon18" ? "active-tab" : ""}`}>{item}</p>
+                        ))}
+                    </div>
+            {/* <article className="experience-card">
               {" "}
               <img
                 className="card-img"
@@ -187,17 +196,15 @@ function App() {
                   View company
                 </a>
               </div>
-            </article>
+            </article> */}
           </div>
         </section>
         <section className="section projects">
           <h2 className="category-h2">My projects</h2>
-		  <div className="highlighted-projects">
-			<h4>
-				Highlighted projects
-			</h4>
-			
-		  </div>
+          <div className="highlighted-projects"></div>
+          <article className="project-card">
+
+          </article>
         </section>
         <section className="section contact">contact</section>
       </main>
