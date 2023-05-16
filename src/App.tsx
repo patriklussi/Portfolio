@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 //Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,12 +9,15 @@ import { IIcon } from "./helpers/types";
 //Library imports
 function App() {
   const aboutRef = useRef<HTMLElement>(null);
+  const [activeTab, setActiveTab] = useState("Swedcon18");
   const [selectedSkill, setSelectedSkill] = useState<IIcon>();
   const scrollToAbout = () => {
     aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-
+  const handleTab = useCallback((item: string) => {
+    setActiveTab(item);
+  }, []);
   const tabs = ["Swedcon18", "Sensera AB", "Learnpoint"];
   return (
     <div className="App animate__animated animate__fadeIn  animate__delay-1s ">
@@ -111,14 +114,54 @@ function App() {
         </section>
         <section className="section experience">
           <h2 className="category-h2">Experience</h2>
-          <div className="experience-box">
- 
-                    {/* Implement horizontal tabs */}
-                    <ul className="tabs">
-                        {tabs.map((item) => (
-                          <li className={`tab-item  ${item === "Swedcon18" ? "active-tab" : ""}`}>{item}</li>
-                        ))}
-                    </ul>
+          <div className="experience-content">
+            <div className="experience-box">
+              {/* Implement horizontal tabs */}
+              <div>
+                <ul className="tabs">
+                  {tabs.map((item) => (
+                    <li
+                    key={item}
+                      onClick={() => {
+                        handleTab(item);
+                      }}
+                      className={`tab-item  ${
+                        item === activeTab ? "active-tab" : ""
+                      }`}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="experience-card">
+                  <div className="experience-card-content">
+                  <h2>
+                    <span className="experience-card-title">
+                      Frontend developer
+                    </span>{" "}
+                    <span className="inline-a">
+                      @<a href="#">Swedcon18</a>
+                    </span>
+                  </h2>
+                  <div>
+                    <time>Mar 2023 - Present</time>
+                  </div>
+                      <ul>
+                        <li>
+                          <p>
+                          Worked with frontend development on the African healthcare application Carelyo. Where i worked with developing new features, mainting the application and bringing a user oriented view on the application.
+                          </p>
+                        </li>
+                        <li>
+                          Worked as a part of a frontend team where i worked with other frontend developers designing,building and implementing new parts of the Carleyo application. 
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* <article className="experience-card">
               {" "}
               <img
@@ -202,9 +245,7 @@ function App() {
         <section className="section projects">
           <h2 className="category-h2">My projects</h2>
           <div className="highlighted-projects"></div>
-          <article className="project-card">
-
-          </article>
+          <article className="project-card"></article>
         </section>
         <section className="section contact">contact</section>
       </main>
