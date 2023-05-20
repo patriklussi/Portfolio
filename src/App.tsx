@@ -1,23 +1,19 @@
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 //Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 //Helpers
 import { skills } from "./helpers/icons";
 //Types
-import { IIcon } from "./helpers/types";
 //Library imports
 function App() {
   const aboutRef = useRef<HTMLElement>(null);
-  const [activeTab, setActiveTab] = useState("Swedcon18");
-  const [selectedSkill, setSelectedSkill] = useState<IIcon>();
+  const [hover,setHover] = useState(false);
   const scrollToAbout = () => {
     aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const handleTab = useCallback((item: string) => {
-    setActiveTab(item);
-  }, []);
+  console.log(hover);
   const tabs = ["Swedcon18", "Sensera AB", "Learnpoint"];
   return (
     <div className="App animate__animated animate__fadeIn  animate__delay-1s ">
@@ -97,12 +93,7 @@ function App() {
               <div className="icon-grid-container">
                 {skills.map((item) => (
                   <article
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") setSelectedSkill(item);
-                    }}
-                    onClick={() => setSelectedSkill(item)}
-                    className="icon-box"
-                    key={item.id}
+                  
                   >
                     <img width={50} src={item.src} alt={item.alt} />
                     <p>{item.name}</p>
@@ -113,134 +104,21 @@ function App() {
           </div>
         </section>
         <section className="section experience">
-          <h2 className="category-h2">Experience</h2>
-          <div className="experience-content">
-            <div className="experience-box">
-              {/* Implement horizontal tabs */}
-              <div>
-                <ul className="tabs">
-                  {tabs.map((item) => (
-                    <li
-                    key={item}
-                      onClick={() => {
-                        handleTab(item);
-                      }}
-                      className={`tab-item  ${
-                        item === activeTab ? "active-tab" : ""
-                      }`}
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="experience-card">
-                  <div className="experience-card-content">
-                  <h2>
-                    <span className="experience-card-title">
-                      Frontend developer
-                    </span>{" "}
-                    <span className="inline-a">
-                      @<a href="#">Swedcon18</a>
-                    </span>
-                  </h2>
-                  <div>
-                    <time>Mar 2023 - Present</time>
-                  </div>
-                      <ul>
-                        <li>
-                          <p>
-                          Worked with frontend development on the African healthcare application Carelyo. Where i worked with developing new features, mainting the application and bringing a user oriented view on the application.
-                          </p>
-                        </li>
-                        <li>
-                          Worked as a part of a frontend team where i worked with other frontend developers designing,building and implementing new parts of the Carleyo application. 
-                        </li>
-                      </ul>
-                  </div>
-                </div>
-              </div>
+          <h2 className="category-h2">Previous work</h2>
+         
+          
+          <div className="exp-card" onMouseOver={()=> setHover(true)} onMouseOut={()=> setHover(false)}>
+            <img className="exp-image" src="../src/assets/screenshot6.png" alt="Previous work image" />
+            <div className={`exp-content ${hover  && ('show')}`}>
+            <h2 >My company</h2>
+            <p>
+                  Worked as a frontend developer on the Carelyo african healthcare application
+            </p>
+            <a href="#" className="exp-button" >View company</a>
             </div>
-
-            {/* <article className="experience-card">
-              {" "}
-              <img
-                className="card-img"
-                src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
-                alt="nothing currently"
-              />
-              <div className="experience-card-content-box">
-                <h3>Carelyo</h3>
-
-                <p className="description">
-                  Worked as a frontend developer on the african health care app
-                  Carelyo.
-                </p>
-
-                <div className="tagBox">
-                  <article className="tag">Frontend</article>
-                  <article className="tag">UX/UI</article>
-                  <article className="tag">React</article>
-                  <article className="tag">TypeScript</article>
-                </div>
-
-                <a href="#" className="company-link">
-                  View company
-                </a>
-              </div>
-            </article>
-            <article className="experience-card">
-              {" "}
-              <img
-                className="card-img"
-                src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
-                alt="nothing currently"
-              />
-              <div className="experience-card-content-box">
-                <h3>Sensera AB</h3>
-
-                <p className="description">
-                  Worked at Sensera with their LMS web application
-                </p>
-                <div className="tagBox">
-                  <article className="tag">React</article>
-                  <article className="tag">TypeScript</article>
-                  <article className="tag">Figma</article>
-                  <article className="tag">UX/UI</article>
-                </div>
-
-                <a href="#" className="company-link">
-                  View company
-                </a>
-              </div>
-            </article>
-            <article className="experience-card">
-              <img
-                className="card-img"
-                src="https://images.unsplash.com/photo-1512144915806-39e29c5565a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
-                alt="nothing currently"
-              />
-
-              <div className="experience-card-content-box">
-                <h3>Schoolsoft</h3>
-
-                <p className="description">
-                  Worked at ViaEcole as a frontend developer creating a web
-                  based screensharing application
-                </p>
-                <div className="tagBox">
-                  <article className="tag">JavaScript</article>
-                  <article className="tag">P2P</article>
-                  <article className="tag">WebSockets</article>
-                  <article className="tag">WebRTC</article>
-                </div>
-
-                <a href="#" className="company-link">
-                  View company
-                </a>
-              </div>
-            </article> */}
+          
           </div>
+          
         </section>
         <section className="section projects">
           <h2 className="category-h2">My projects</h2>

@@ -19,6 +19,8 @@
     --xxl: 48px;
 }
 
+
+
 body {
     background-color: black;
     font-family: "Inter", sans-serif;
@@ -27,11 +29,10 @@ body {
 
 :where(h1, h2, h3, h4, h5) {
     font-family: "Inter", sans-serif;
+    font-weight: 'normal';
 }
 
-p {
-    color: var(--neutraL);
-}
+
 
 a {
     text-decoration: none;
@@ -203,7 +204,7 @@ a {
 .btn {
     font-family: inherit;
     padding: 12px 50px;
-    border-radius: 36px;
+
     cursor: pointer;
     background-color: transparent;
     border: 2px solid var(--border);
@@ -381,99 +382,84 @@ a {
 }
 
 .experience {
-    gap: var(--lg);
+    max-width: 950px;
+    margin: 0 auto;
 }
 
-
-
-
-.tabs {
-    background-color: var(--border);
-    display: flex;
-    gap: var(--md);
-    padding: 0 var(--lg);
-    border-radius: 5px;
-    margin-bottom: var(--md);
-}
-
-.tab-item {
-    list-style: none;
-    padding: 14px;
-    border-bottom: 3px solid transparent;
-    color: #c7c7c7;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.active-tab {
-    border-bottom: 3px solid var(--neutraL);
-    color: var(--neutraL);
-}
-
-.experience-card {
-    font-weight: 300;
-    border-radius: 5px;
-    background-color: var(--background);
-    display: grid;
-    gap: var(--sm);
-    color: var(--neutraL);
-    padding: var(--neutraL);
-    min-height: 200px;
+.exp-card {
+    position: relative;
     width: 100%;
+    background-color: var(--neutraL);
+    min-height: 500px;
     color: var(--background);
-    padding: var(--md);
-    min-height: 400px;
+    transition: 0.5s all linear;
+    overflow: hidden;
+    margin: var(--xxl) 0px;
+    cursor: pointer;
+
 }
 
-.experience span {
-    font-weight: 300;
+.exp-content {
+    position: absolute;
+    top: 0px;
+    left: auto;
+    display: none;
+    animation: slideUp .3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.experience-card-content {
-    max-width: 550px;
+.show {
+    display: block;
 }
 
-.experience-card-content p {
-
-    margin: var(--sm) 0px;
+.exp-image {
+    width: 100%;
+    transition: all 0.7s linear;
 }
 
-.experience-card time {
-    color: var(--neutraL);
-}
+@keyframes slideUp {
+    from {
+        top: -50px;
+    }
 
-.experience-card-title {
-    color: var(--border);
-}
+    ;
 
-.inline-a {
-    color: var(--neutraL);
-}
+    to {
+        top: 50px;
+    }
 
-.experience-card ul {
+    ;
 
-    color: var(--neutraL);
-}
-
-.experience-card span {
-    color: var(--neutraL);
-}
-
-.experience-card ul li {
-    list-style: none;
-    margin: var(--sm) 0px;
 }
 
 
-.experience-box {
-    display: grid;
-    gap: 64px;
+.exp-image:hover {
+    filter: opacity(.05);
 }
 
-.experience-ca .flex-item-center-sm {
-    display: flex;
-    align-items: center;
-    gap: var(--sm);
+.exp-card h2 {
+    font-weight: normal;
+
+}
+
+
+
+.exp-button {
+    display: inline-block;
+    border: 2px solid transparent;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-family: inherit;
+    background: var(--border);
+    color: white;
+    text-decoration: none;
+    transition: all linear .1s;
+
+}
+
+.exp-button:hover {
+    background-color: transparent;
+    border: 2px solid var(--border);
+    color: black;
 }
 
 /* Projects */
