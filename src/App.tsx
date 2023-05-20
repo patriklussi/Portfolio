@@ -1,3 +1,4 @@
+//Todo COLOR SHIFT ON SCROLL
 import { useRef, useState } from "react";
 //Components
 import Header from "./components/Header";
@@ -8,7 +9,7 @@ import { skills } from "./helpers/icons";
 //Library imports
 function App() {
   const aboutRef = useRef<HTMLElement>(null);
-  const [hover,setHover] = useState(false);
+  const [hover, setHover] = useState(false);
   const scrollToAbout = () => {
     aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
@@ -18,32 +19,36 @@ function App() {
   return (
     <div className="App animate__animated animate__fadeIn  animate__delay-1s ">
       <Header scrollToAbout={scrollToAbout} />
-
+      <div className="test-art"></div>
+     
+      <div className="test-art2"></div>
       <main className="hero">
         <section className="section landing ">
-          <h2 className="small-text">Hi, my name is</h2>
-          <h1 className="light">Patrik Lussi</h1>
-          <h1>Frontend web developer</h1>
+          <div className="landing-content-container">
+            <h2 className="small-text">Hi, my name is</h2>
+            <h1 className="light">Patrik Lussi</h1>
+            <h1>Frontend web developer</h1>
 
-          <div className="landing-text-box">
-            <p>
-              Im a junior frontend developer who has a passion for building
-              dynamic and engaing user interfaces and web experiences. <br />
-              <span className="light">
-                {" "}
-                Im currently looking for new opportunities to work and use my
-                skills.{" "}
-              </span>
-            </p>
-          </div>
-          <div className="landing-button-box">
-            <a
-              type="button"
-              href="https://github.com/patriklussi"
-              className="btn"
-            >
-              Github
-            </a>
+            <div className="landing-text-box">
+              <p>
+                Im a junior frontend developer who has a passion for building
+                dynamic and engaing user interfaces and web experiences. <br />
+                <span className="light">
+                  {" "}
+                  Im currently looking for new opportunities to work and use my
+                  skills.{" "}
+                </span>
+              </p>
+            </div>
+            <div className="landing-button-box">
+              <a
+                type="button"
+                href="https://github.com/patriklussi"
+                className="btn"
+              >
+                Github
+              </a>
+            </div>
           </div>
         </section>
 
@@ -92,9 +97,7 @@ function App() {
               <p className="skills-container-title">Frontend</p>
               <div className="icon-grid-container">
                 {skills.map((item) => (
-                  <article
-                  
-                  >
+                  <article>
                     <img width={50} src={item.src} alt={item.alt} />
                     <p>{item.name}</p>
                   </article>
@@ -105,20 +108,12 @@ function App() {
         </section>
         <section className="section experience">
           <h2 className="category-h2">Previous work</h2>
-         
-          
-          <div className="exp-card" onMouseOver={()=> setHover(true)} onMouseOut={()=> setHover(false)}>
-            <img className="exp-image" src="../src/assets/screenshot6.png" alt="Previous work image" />
-            <div className={`exp-content ${hover  && ('show')}`}>
-            <h2 >My company</h2>
-            <p>
-                  Worked as a frontend developer on the Carelyo african healthcare application
-            </p>
-            <a href="#" className="exp-button" >View company</a>
-            </div>
-          
+
+          <div className="exp-content">
+                    <h3>My company</h3>
+                    <p>Short description of what i did at the company. Doesnt have to be too long but has to include that i did some frontend stuff</p>
+                    <button>Learn more</button>
           </div>
-          
         </section>
         <section className="section projects">
           <h2 className="category-h2">My projects</h2>

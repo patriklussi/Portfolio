@@ -8,7 +8,7 @@
 
 :root {
     --background: #181818;
-    --border: #DC5F00;
+    --border: #B33030;
     --neutraL: #f2f2f2;
     --muted: #DC5F00;
     --bluee: #5CB8E4;
@@ -67,13 +67,41 @@ a {
 
 .App {
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    position: relative;
+}
+
+.test-art {
+    position: fixed;
+    width: 75px;
+    height: 100vh;
+    background-color: var(--border);
+    z-index: -111;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+
+
+.test-art2 {
+    position: fixed;
+    width: 75px;
+    height: 100vh;
+    background-color: var(--border);
+    z-index: -111;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 /* Header */
 .portfolio-header {
     width: 100vw;
     display: flex;
-    padding: var(--md) var(--xxl);
+    padding: var(--md) 120px;
     justify-content: space-between;
     position: fixed;
     z-index: 11;
@@ -121,7 +149,7 @@ a {
 .header-button {
     font-family: inherit;
     padding: 10px var(--md);
-    border-radius: 36px;
+
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -162,6 +190,11 @@ a {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+}
+
+.landing-content-container {
+
+    padding: 0px var(--md);
 }
 
 .landing h1 {
@@ -381,85 +414,34 @@ a {
     margin-top: var(--sm);
 }
 
-.experience {
-    max-width: 950px;
-    margin: 0 auto;
-}
-
-.exp-card {
-    position: relative;
-    width: 100%;
-    background-color: var(--neutraL);
-    min-height: 500px;
-    color: var(--background);
-    transition: 0.5s all linear;
-    overflow: hidden;
-    margin: var(--xxl) 0px;
-    cursor: pointer;
-
-}
-
 .exp-content {
-    position: absolute;
-    top: 0px;
-    left: auto;
-    display: none;
-    animation: slideUp .3s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.show {
-    display: block;
-}
-
-.exp-image {
     width: 100%;
-    transition: all 0.7s linear;
-}
-
-@keyframes slideUp {
-    from {
-        top: -50px;
-    }
-
-    ;
-
-    to {
-        top: 50px;
-    }
-
-    ;
-
-}
-
-
-.exp-image:hover {
-    filter: opacity(.05);
-}
-
-.exp-card h2 {
-    font-weight: normal;
-
-}
-
-
-
-.exp-button {
-    display: inline-block;
-    border: 2px solid transparent;
-    padding: 12px 16px;
-    cursor: pointer;
-    font-family: inherit;
-    background: var(--border);
-    color: white;
-    text-decoration: none;
-    transition: all linear .1s;
-
-}
-
-.exp-button:hover {
-    background-color: transparent;
+    min-height: 400px;
     border: 2px solid var(--border);
-    color: black;
+    margin: var(--xxl) 0px;
+    transition: all 0.3s ease-in-out;
+    padding: var(--md);
+
+}
+
+.exp-content:hover {
+    background-color: var(--neutraL);
+    border-color: var(--neutraL);
+    color: var(--background);
+}
+
+.exp-img {
+    height: 100%;
+    width: 50%;
+}
+
+.exp-content button {
+    border: 2px solid inherit;
+    padding: 12px 16px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 1rem;
+    color: inherit;
 }
 
 /* Projects */
