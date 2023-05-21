@@ -14,6 +14,7 @@
     --muted: #461111;
     --dark: #040303;
     --cardBg: #214252;
+    --cardBgDark: #183544;
     --neutral2: #CE6262;
     /* Paddings */
     --sm: 8px;
@@ -22,12 +23,9 @@
     --xxl: 48px;
 }
 
-
-
 body {
     background-color: var(--dark);
     font-family: "Inter", sans-serif;
-
 }
 
 :where(h1, h2, h3, h4, h5) {
@@ -35,7 +33,9 @@ body {
     font-weight: 300;
 }
 
-
+p {
+    line-height: 150%;
+}
 
 a {
     text-decoration: none;
@@ -49,20 +49,17 @@ a {
 }
 
 /* .category-h2::before {
-    content: "";
-    height: 100%;
-
-    width: 0px;
-    border-bottom: 2px solid var(--border);
-    position: absolute;
-    transition: all .4s ease-out;
-
+	content: "";
+	height: 100%;
+	width: 0px;
+	border-bottom: 2px solid var(--border);
+	position: absolute;
+	transition: all .4s ease-out;
 }
-
 .category-h2:hover::before {
-    width: 100%;
-} */
-
+	width: 100%;
+}
+*/
 .category-h2:hover {
     color: var(--neutraL);
 }
@@ -71,7 +68,6 @@ a {
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     position: relative;
 }
-
 
 .test-art2 {
     position: fixed;
@@ -82,14 +78,13 @@ a {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 /* Header */
 .portfolio-header {
     width: 100vw;
     display: flex;
-    padding: var(--md) 10px;
+    padding: var(--md) var(--xxl);
     justify-content: space-between;
     position: fixed;
     z-index: 11;
@@ -137,7 +132,6 @@ a {
 .header-button {
     font-family: inherit;
     padding: 10px var(--md);
-
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -181,7 +175,6 @@ a {
 }
 
 .landing-content-container {
-
     padding: 0px var(--md);
 }
 
@@ -225,7 +218,6 @@ a {
 .btn {
     font-family: inherit;
     padding: 12px 50px;
-
     cursor: pointer;
     background-color: transparent;
     border: 2px solid var(--border);
@@ -249,7 +241,6 @@ a {
     border-radius: 36px;
     cursor: pointer;
     background-color: transparent;
-
     color: var(--border);
     font-size: var(--md);
     display: inline-flex;
@@ -409,7 +400,6 @@ a {
     margin: var(--xxl) 0px;
     transition: all 0.3s ease-in-out;
     padding: var(--md);
-
 }
 
 .exp-content:hover {
@@ -432,11 +422,7 @@ a {
     color: inherit;
 }
 
-
-
 /* Projects */
-
-
 .project-content-container {
     margin: var(--xxl) 0px;
 }
@@ -445,7 +431,7 @@ a {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--lg);
+    gap: var(--md);
 }
 
 .small-desc {
@@ -461,37 +447,68 @@ a {
     flex-direction: column;
     justify-content: space-between;
     min-height: 200px;
+    max-height: 450px;
+    border: 2px solid transparent;
+    gap: var(--lg);
+
 }
 
+.project-card header h3 {
+    font-size: var(--lg);
+}
 
+.project-card-a {
+    color: var(--neutraL);
+    cursor: pointer;
+    border: 2px solid var(--neutraL);
+    padding: 8px;
+    font-size: 14px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: inline-block;
+}
+
+.project-card-a:hover {
+    background-color: var(--neutraL);
+    color: var(--dark);
+}
 
 .project-card h3 {
     font-weight: 600;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0px 0px 5px var(--cardBg);
+
+}
+
+.desc-container {
+    margin: var(--sm) 0px;
+}
+
+.small-desc {
+    line-height: 150%;
+}
+
+.tag-container {
+    margin-bottom: var(--lg);
 }
 
 .tag-list {
     display: flex;
     gap: var(--md);
-    justify-content: flex-start;
+
+
 }
 
 .tag-list li {
     list-style: none;
     font-size: 14px;
-    color: #bdbdbd;
-    border: 1px solid var(--darkerNeutral);
+    color: var(--neutraL);
+    background: var(--cardBgDark);
     padding: 8px;
-    border-radius: 36px;
+
 
 }
-
-
-
-
 
 /* Footer */
 .footy {

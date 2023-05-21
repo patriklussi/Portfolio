@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 //Helpers
 import { skills } from "./helpers/icons";
+import { projects } from "./helpers/projects";
 //Types
 //Library imports
 function App() {
@@ -119,111 +120,33 @@ function App() {
 
           <div className="project-content-container">
             <div className="grid-container-p">
-              <article className="project-card">
+              {projects?.map(item => (
+                <>
+                <article className="project-card">
                 <header>
-                  <h3>Project name</h3>
+                <div className="tag-container">
+                    <ul className="tag-list">
+                      {item.tags.map((tags) => (
+                        <li>{tags}</li>
+                      ))}
+                 
+                    </ul>
+                  </div>
+                  <h3>{item.name}</h3>
                   <div className="desc-container">
                     <p className="small-desc">
-                      Small description of said project meant to entice the
-                      reader into reading more
+                    {item.desc}
                     </p>
                   </div>
                 </header>
 
                 <footer>
-                  <div className="tag-container">
-                    <ul className="tag-list">
-                      <li>Frontend</li>
-                      <li>React</li>
-                      <li>TypeScript</li>
-                    </ul>
-                  </div>
+                
+                  <a className="project-card-a" href={item.url}>View project</a>
                 </footer>
               </article>
-              <article className="project-card">
-                <header>
-                  <h3>Project name</h3>
-                  <div className="desc-container">
-                    <p className="small-desc">
-                      Small description of said project meant to entice the
-                      reader into reading more
-                    </p>
-                  </div>
-                </header>
-
-                <footer>
-                  <div className="tag-container">
-                    <ul className="tag-list">
-                      <li>Frontend</li>
-                      <li>React</li>
-                      <li>TypeScript</li>
-                    </ul>
-                  </div>
-                </footer>
-              </article>
-              <article className="project-card">
-                <header>
-                  <h3>Project name</h3>
-                  <div className="desc-container">
-                    <p className="small-desc">
-                      Small description of said project meant to entice the
-                      reader into reading more
-                    </p>
-                  </div>
-                </header>
-
-                <footer>
-                  <div className="tag-container">
-                    <ul className="tag-list">
-                      <li>Frontend</li>
-                      <li>React</li>
-                      <li>TypeScript</li>
-                    </ul>
-                  </div>
-                </footer>
-              </article>
-              <article className="project-card">
-                <header>
-                  <h3>Project name</h3>
-                  <div className="desc-container">
-                    <p className="small-desc">
-                      Small description of said project meant to entice the
-                      reader into reading more
-                    </p>
-                  </div>
-                </header>
-
-                <footer>
-                  <div className="tag-container">
-                    <ul className="tag-list">
-                      <li>Frontend</li>
-                      <li>React</li>
-                      <li>TypeScript</li>
-                    </ul>
-                  </div>
-                </footer>
-              </article>
-              <article className="project-card">
-                <header>
-                  <h3>Project name</h3>
-                  <div className="desc-container">
-                    <p className="small-desc">
-                      Small description of said project meant to entice the
-                      reader into reading more
-                    </p>
-                  </div>
-                </header>
-
-                <footer>
-                  <div className="tag-container">
-                    <ul className="tag-list">
-                      <li>Frontend</li>
-                      <li>React</li>
-                      <li>TypeScript</li>
-                    </ul>
-                  </div>
-                </footer>
-              </article>
+                </>
+              ))}
             </div>
           </div>
         </section>
