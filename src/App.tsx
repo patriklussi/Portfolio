@@ -15,13 +15,13 @@ function App() {
   };
 
   console.log(hover);
-  const tabs = ["Swedcon18", "Sensera AB", "Learnpoint"];
+
   return (
     <div className="App animate__animated animate__fadeIn  animate__delay-1s ">
       <Header scrollToAbout={scrollToAbout} />
-      <div className="test-art"></div>
-     
-      <div className="test-art2"></div>
+      {/* <div className="test-art"></div>
+
+      <div className="test-art2"></div> */}
       <main className="hero">
         <section className="section landing ">
           <div className="landing-content-container">
@@ -104,21 +104,128 @@ function App() {
                 ))}
               </div>
             </div>
+            <div>
+              <p className="skill-container-title">Backend & other tools</p>
+            </div>
           </div>
         </section>
         <section className="section experience">
           <h2 className="category-h2">Previous work</h2>
-
-          <div className="exp-content">
-                    <h3>My company</h3>
-                    <p>Short description of what i did at the company. Doesnt have to be too long but has to include that i did some frontend stuff</p>
-                    <button>Learn more</button>
-          </div>
         </section>
         <section className="section projects">
           <h2 className="category-h2">My projects</h2>
-          <div className="highlighted-projects"></div>
-          <article className="project-card"></article>
+
+          <div className="featured-projects"></div>
+
+          <div className="project-content-container">
+            <div className="grid-container-p">
+              <article className="project-card">
+                <header>
+                  <h3>Project name</h3>
+                  <div className="desc-container">
+                    <p className="small-desc">
+                      Small description of said project meant to entice the
+                      reader into reading more
+                    </p>
+                  </div>
+                </header>
+
+                <footer>
+                  <div className="tag-container">
+                    <ul className="tag-list">
+                      <li>Frontend</li>
+                      <li>React</li>
+                      <li>TypeScript</li>
+                    </ul>
+                  </div>
+                </footer>
+              </article>
+              <article className="project-card">
+                <header>
+                  <h3>Project name</h3>
+                  <div className="desc-container">
+                    <p className="small-desc">
+                      Small description of said project meant to entice the
+                      reader into reading more
+                    </p>
+                  </div>
+                </header>
+
+                <footer>
+                  <div className="tag-container">
+                    <ul className="tag-list">
+                      <li>Frontend</li>
+                      <li>React</li>
+                      <li>TypeScript</li>
+                    </ul>
+                  </div>
+                </footer>
+              </article>
+              <article className="project-card">
+                <header>
+                  <h3>Project name</h3>
+                  <div className="desc-container">
+                    <p className="small-desc">
+                      Small description of said project meant to entice the
+                      reader into reading more
+                    </p>
+                  </div>
+                </header>
+
+                <footer>
+                  <div className="tag-container">
+                    <ul className="tag-list">
+                      <li>Frontend</li>
+                      <li>React</li>
+                      <li>TypeScript</li>
+                    </ul>
+                  </div>
+                </footer>
+              </article>
+              <article className="project-card">
+                <header>
+                  <h3>Project name</h3>
+                  <div className="desc-container">
+                    <p className="small-desc">
+                      Small description of said project meant to entice the
+                      reader into reading more
+                    </p>
+                  </div>
+                </header>
+
+                <footer>
+                  <div className="tag-container">
+                    <ul className="tag-list">
+                      <li>Frontend</li>
+                      <li>React</li>
+                      <li>TypeScript</li>
+                    </ul>
+                  </div>
+                </footer>
+              </article>
+              <article className="project-card">
+                <header>
+                  <h3>Project name</h3>
+                  <div className="desc-container">
+                    <p className="small-desc">
+                      Small description of said project meant to entice the
+                      reader into reading more
+                    </p>
+                  </div>
+                </header>
+
+                <footer>
+                  <div className="tag-container">
+                    <ul className="tag-list">
+                      <li>Frontend</li>
+                      <li>React</li>
+                      <li>TypeScript</li>
+                    </ul>
+                  </div>
+                </footer>
+              </article>
+            </div>
+          </div>
         </section>
         <section className="section contact">contact</section>
       </main>
