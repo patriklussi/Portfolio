@@ -1,7 +1,10 @@
 import { Menu } from "react-feather";
+import useHeaderScroll from "../hooks/useHeaderScroll";
 const Header = ({scrollToAbout} : {scrollToAbout: ()=> void}) => {
+	const scrollDirection = useHeaderScroll();
+	console.log(scrollDirection);
 	return (
-		<header className='portfolio-header'>
+		<header className={`portfolio-header ${scrollDirection === "down" ? "hide" : ""}`}>
             <div>
               <a href="https://www.linkedin.com/in/patriklussi/">  <h2 className="header-title">
                     PL

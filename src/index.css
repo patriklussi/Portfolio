@@ -24,13 +24,13 @@
 }
 
 body {
-    background-color: var(--dark);
+
     font-family: "Inter", sans-serif;
 }
 
 :where(h1, h2, h3, h4, h5) {
     font-family: "Inter", sans-serif;
-    font-weight: 300;
+    font-weight: bold;
 }
 
 p {
@@ -82,14 +82,23 @@ a {
 
 /* Header */
 .portfolio-header {
-    width: 100vw;
+    background: var(--cardBgDark);
+    width: 100%;
     display: flex;
     padding: var(--md) var(--xxl);
     justify-content: space-between;
-    position: fixed;
+    position: sticky;
     z-index: 11;
     top: 0px;
     align-items: center;
+    height: 91px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+
+.hide {
+    top: -91px;
 }
 
 .menu {
@@ -141,6 +150,7 @@ a {
 }
 
 .bordered {
+    padding: 8px var(--md);
     border: 2px solid var(--border);
 }
 
@@ -152,31 +162,29 @@ a {
 
 .hero {
     color: var(--border);
-    padding: var(--md);
     min-height: 100vh;
-    max-width: 1600px;
     position: relative;
-    padding: 0px 150px;
-    margin: 0px auto;
+
 }
 
 .section {
     padding: var(--sm);
-    max-width: 1100px;
     min-height: 100vh;
+    background-color: var(--cardBg);
+    padding: var(--xxl);
     margin: 0 auto;
 }
 
-.landing {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
+.landing .content {
+    margin-top: 5rem;
 }
 
-.landing-content-container {
-    padding: 0px var(--md);
+.inner-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+
 
 .landing h1 {
     font-size: clamp(40px, 8vw, 80px);
@@ -207,7 +215,7 @@ a {
 }
 
 .light {
-    color: var(--neutraL);
+    color: rgb(221, 221, 221);
 }
 
 .small-text {
@@ -257,13 +265,9 @@ a {
 }
 
 /* About section */
-.about-me {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
 
 .content-container {
+    margin-top: 5rem;
     display: flex;
     align-items: center;
     width: 100%;
@@ -338,6 +342,7 @@ a {
 
 .para-container p {
     font-size: clamp(12px, 4vw, 16px);
+    color: var(--neutraL);
 }
 
 /* SKills section */
@@ -430,7 +435,7 @@ a {
 .grid-container-p {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--md);
 }
 
@@ -439,85 +444,27 @@ a {
 }
 
 .project-card {
-    background-color: var(--cardBg);
+    border: 3px solid var(--border);
+    border-radius: 5px;
     padding: var(--md);
-    color: var(--neutraL);
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 200px;
-    max-height: 450px;
-    border: 2px solid transparent;
-    gap: var(--lg);
+    display: grid;
+    gap: var(--sm);
 
 }
 
-.project-card header h3 {
-    font-size: var(--lg);
-}
-
-.project-card-a {
-    color: var(--neutraL);
-    cursor: pointer;
-    border: 2px solid var(--neutraL);
-    padding: 8px;
-    font-size: 14px;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    display: inline-block;
-}
-
-.project-card-a:hover {
-    background-color: var(--neutraL);
-    color: var(--dark);
-}
-
-.project-card h3 {
-    font-weight: 600;
-}
-
-.project-card:hover {
-    box-shadow: 0px 0px 5px var(--cardBg);
-
-}
-
-.desc-container {
-    margin: var(--sm) 0px;
-}
-
-.small-desc {
-    line-height: 150%;
-}
-
-.tag-container {
-    margin-bottom: var(--lg);
-}
-
-.tag-list {
-    display: flex;
-    gap: var(--md);
-
-
-}
-
-.tag-list li {
+.project-card ul {
     list-style: none;
-    font-size: 14px;
-    color: var(--neutraL);
-    background: var(--cardBgDark);
-    padding: 8px;
-
-
 }
 
 /* Footer */
 .footy {
-    max-width: 1000px;
+    background: var(--border);
     margin: 0 auto;
     padding: var(--lg);
     display: flex;
     justify-content: center;
     gap: var(--sm);
+
 }
 
 /* Progress bar */
@@ -561,9 +508,7 @@ a {
 
 /* Media querys */
 @media screen and (max-width: 1024px) {
-    .hero {
-        padding: 0px 100px;
-    }
+
 
     .content-container {
         flex-direction: column;
@@ -605,9 +550,7 @@ a {
         width: 100%;
     }
 
-    .hero {
-        padding: 0px 50px;
-    }
+
 
     .header-nav {
         display: none;
@@ -619,9 +562,7 @@ a {
 }
 
 @media screen and (max-width: 425px) {
-    .hero {
-        padding: 0px 25px;
-    }
+
 
     .icon-grid-container {
         display: grid;
